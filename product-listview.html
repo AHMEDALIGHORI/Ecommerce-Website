@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product-listview</title>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" </head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-top">
+      <div class="branding">
+        <img src="assets/Image/Brand/logo-colored.jpg" alt="Brand Logo" class="brand-logo">
+      </div>
+      <div class="search-group">
+        <input type="text" placeholder="Search">
+        <div class="select-wrapper">
+          <select>
+            <option>All category</option>
+          </select>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <button id="search-button">Search</button>
+      </div>
+      <nav class="user-actions">
+        <div class="action-btn"><i class="fas fa-user"></i><span>Profile</span></div>
+        <div class="action-btn"><i class="fas fa-envelope"></i><span>Message</span></div>
+        <div class="action-btn"><i class="fas fa-heart"></i><span>Orders</span></div>
+        <div class="action-btn"><i class="fas fa-shopping-cart"></i><span>My Cart</span></div>
+      </nav>
+    </div>
+    <div class="header-bottom">
+      <ul class="nav-list">
+        <li><button class="hamburger-btn"><i class="fas fa-bars"></i></button></li>
+        <li><a href="#">All category</a></li>
+        <li><a href="#">Hot offers</a></li>
+        <li><a href="#">Gift boxes</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Menu item</a></li>
+        <li><a href="#">Help <i class="fas fa-chevron-down"></i></a></li>
+      </ul>
+      <div class="locale">
+        <div class="select-wrapper">
+          <select>
+            <option>English, USD</option>
+          </select>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="ship-to">
+          <span>Ship to</span>
+          <img class="flag-icon" src="https://flagcdn.com/24x18/de.png" alt="DE">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </header>
+  <div class="breadcrumb">
+    Home &gt; Clothings &gt; Men's Wear &gt; Summer Clothing
+  </div>
+  <div class="container">
+    <!-- Sidebar Filters -->
+    <aside class="sidebar">
+      <section class="filter">
+        <h4>
+  <span class="title">Category</span>
+  <span class="toggle">▾</span>
+</h4>
+
+          <ul>
+          <li><label><input type="checkbox" checked> Mobile accessory</label></li>
+          <li><label><input type="checkbox"> Electronics</label></li>
+          <li><label><input type="checkbox"> Smartphones</label></li>
+          <li><label><input type="checkbox"> Modern tech</label></li>
+          <li class="see-all"><a href="#">See all</a></li>
+        </ul>
+      </section>
+      <section class="filter">
+        <h4>
+  <span class="title">Brands</span>
+  <span class="toggle">▾</span>
+</h4>
+
+        <ul>
+          <li><label><input type="checkbox"> Samsung</label></li>
+          <li><label><input type="checkbox"> Apple</label></li>
+          <li><label><input type="checkbox"> Huawei</label></li>
+          <li><label><input type="checkbox"> Poco</label></li>
+          <li><label><input type="checkbox"> Lenovo</label></li>
+          <li class="see-all"><a href="#">See all</a></li>
+        </ul>
+      </section>
+      <section class="filter">
+        <h4>
+  <span class="title">Features</span>
+  <span class="toggle">▾</span>
+</h4>
+
+        <ul>
+          <li><label><input type="checkbox"> Metallic</label></li>
+          <li><label><input type="checkbox"> Plastic cover</label></li>
+          <li><label><input type="checkbox"> 8GB Ram</label></li>
+          <li><label><input type="checkbox"> Super power</label></li>
+          <li><label><input type="checkbox"> Large Memory</label></li>
+          <li class="see-all"><a href="#">See all</a></li>
+        </ul>
+      </section>
+      <section class="filter price-range">
+        <h4>
+  <span class="title">price-range</span>
+  <span class="toggle">▾</span>
+</h4>
+
+        <div class="slider">
+          <input type="range" min="0" max="999999" value="0">
+        </div>
+        <div class="inputs">
+          <input type="number" placeholder="Min">
+          <span>—</span>
+          <input type="number" placeholder="Max">
+          <button>Apply</button>
+        </div>
+      </section>
+      <section class="filter">
+        <h4>
+  <span class="title">Condition</span>
+  <span class="toggle">▾</span>
+</h4>
+
+        <ul>
+          <li><label><input type="radio" name="condition" checked> Any</label></li>
+          <li><label><input type="radio" name="condition"> Refurbished</label></li>
+          <li><label><input type="radio" name="condition"> Brand new</label></li>
+          <li><label><input type="radio" name="condition"> Old items</label></li>
+        </ul>
+      </section>
+      <section class="filter">
+        <h4>
+  <span class="title">Rating</span>
+  <span class="toggle">▾</span>
+</h4>
+
+        <ul>
+          <li><label><input type="checkbox"> ★★★★★</label></li>
+          <li><label><input type="checkbox"> ★★★★☆</label></li>
+          <li><label><input type="checkbox"> ★★★☆☆</label></li>
+        </ul>
+      </section>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="left">
+          <span class="count">12,911 items in Mobile accessory</span>
+          <label class="verified-only"><input type="checkbox"> Verified only</label>
+        </div>
+        <div class="right">
+          <select>
+            <option>Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+          </select>
+          <div class="view-toggle">
+            <button class="active">☰</button>
+            <button>▦</button>
+          </div>
+        </div>
+      </div>
+<ul class="product-list">
+  <!-- 1 -->
+  <li class="product-item">
+    <img src="assets/Image/Image/tech/1.jpg" alt="Canon Cmera EOS 2000">
+    <div class="details">
+      <h5>Canon Cmera EOS 2000, Black 10x zoom</h5>
+      <div class="price">
+        <span class="current">$998.00</span>
+        <span class="original">$1,128.00</span>
+      </div>
+      <div class="meta">
+        <span class="rating">★★★★☆ 7.5</span>
+        <span class="orders">154 orders</span>
+        <span class="shipping">Free Shipping</span>
+      </div>
+      <p class="desc">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+      </p>
+      <a href="#" class="view-details">View details</a>
+    </div>
+    <button class="favorite">♡</button>
+  </li>
+
+  <!-- 2 -->
+  <li class="product-item">
+    <img src="assets/Image/Image/tech/3.jpg" alt="GoPro HERO6 4K Action Camera - Black">
+    <div class="details">
+      <h5>GoPro HERO6 4K Action Camera - Black</h5>
+      <div class="price">
+        <span class="current">$998.00</span>
+      </div>
+      <div class="meta">
+        <span class="rating">★★★★☆ 7.5</span>
+        <span class="orders">154 orders</span>
+        <span class="shipping">Free Shipping</span>
+      </div>
+      <p class="desc">
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <a href="#" class="view-details">View details</a>
+    </div>
+    <button class="favorite">♡</button>
+  </li>
+
+  <!-- 3 -->
+  <li class="product-item">
+    <img src="assets/Image/Image/tech/2.jpg" alt="GoPro HERO6 4K Action Camera - Black">
+    <div class="details">
+      <h5>GoPro HERO6 4K Action Camera - Black</h5>
+      <div class="price">
+        <span class="current">$998.00</span>
+      </div>
+      <div class="meta">
+        <span class="rating">★★★★☆ 7.5</span>
+        <span class="orders">154 orders</span>
+        <span class="shipping">Free Shipping</span>
+      </div>
+      <p class="desc">
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <a href="#" class="view-details">View details</a>
+    </div>
+    <button class="favorite">♡</button>
+  </li>
+
+  <!-- 4 -->
+  <li class="product-item">
+    <img src="assets/Image/Image/tech/7.jpg" alt="GoPro HERO6 4K Action Camera - Black">
+    <div class="details">
+      <h5>GoPro HERO6 4K Action Camera - Black</h5>
+      <div class="price">
+        <span class="current">$998.00</span>
+      </div>
+      <div class="meta">
+        <span class="rating">★★★★☆ 7.5</span>
+        <span class="orders">154 orders</span>
+        <span class="shipping">Free Shipping</span>
+      </div>
+      <p class="desc">
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <a href="#" class="view-details">View details</a>
+    </div>
+    <button class="favorite">♡</button>
+  </li>
+
+  <!-- 5 -->
+  <li class="product-item">
+    <img src="assets/Image/Image/tech/8.jpg" alt="GoPro HERO6 4K Action Camera - Black">
+    <div class="details">
+      <h5>GoPro HERO6 4K Action Camera - Black</h5>
+      <div class="price">
+        <span class="current">$998.00</span>
+        <span class="original">$1,128.00</span>
+      </div>
+      <div class="meta">
+        <span class="rating">★★★★☆ 7.5</span>
+        <span class="orders">154 orders</span>
+        <span class="shipping">Free Shipping</span>
+      </div>
+      <p class="desc">
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <a href="#" class="view-details">View details</a>
+    </div>
+    <button class="favorite">♡</button>
+  </li>
+
+  <!-- 6 -->
+  <li class="product-item">
+    <img src="assets/Image/Image/tech/9.jpg" alt="GoPro HERO6 4K Action Camera - Black">
+    <div class="details">
+      <h5>GoPro HERO6 4K Action Camera - Black</h5>
+      <div class="price">
+        <span class="current">$998.00</span>
+      </div>
+      <div class="meta">
+        <span class="rating">★★★★☆ 7.5</span>
+        <span class="orders">154 orders</span>
+        <span class="shipping">Free Shipping</span>
+      </div>
+      <p class="desc">
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <a href="#" class="view-details">View details</a>
+    </div>
+    <button class="favorite">♡</button>
+  </li>
+</ul>
+
+
+     <!-- Pagination -->
+      <div class="pagination">
+        <label>
+          Show
+          <select>
+            <option>10</option>
+            <option>20</option>
+            <option>50</option>
+          </select>
+        </label>
+        <div class="pages">
+          <button>&lt;</button>
+          <button class="active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>&gt;</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <h2>Subscribe on our newsletter</h2>
+    <p>Get daily news on upcoming offers from many suppliers all over the world</p>
+    <form class="subscribe-form">
+      <input type="email" placeholder="Email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/Image/Brand/logo-symbol.jpg" alt="Brand Logo" class="footer-logo">
+        <div class="footer-about">
+          <h3>Brand</h3>
+          <p>Best information about the company goes here but now lorem ipsum is</p>
+          <ul class="social-list">
+            <li><a href="#"><img src="assets/Image/social/facebook3.jpg" alt="Facebook"></a></li>
+            <li><a href="#"><img src="assets/Image/social/twitter3.jpg" alt="Twitter"></a></li>
+            <li><a href="#"><img src="assets/Image/social/linkedin3.jpg" alt="LinkedIn"></a></li>
+            <li><a href="#"><img src="assets/Image/social/Combined Shape.jpg" alt="Instagram"></a></li>
+            <li><a href="#"><img src="assets/Image/social/youtube3.jpg" alt="YouTube"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <div>
+          <h4>About</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Find Store</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Blogs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Partnership</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Find Store</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Blogs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Information</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Money Refund</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>For Users</h4>
+          <ul>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">My Orders</a></li>
+          </ul>
+        </div>
+        <div class="get-app">
+          <h4>Get App</h4>
+          <a href="#">
+            <img class="app-badge" src="assets/Image/hero/apple.png" alt="App Store">
+          </a>
+          <a href="#">
+            <img class="app-badge" src="assets/Image/store.png" alt="Google Play">
+          </a>
+
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2023 Ecommerce.</p>
+      <div class="language-select">
+        <img src="assets/Image/Image/flags/english.png" alt="EN flag">
+        English
+        <i class="ri-arrow-up-s-line"></i>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Countdown script -->
+  <script src="script.js"></script>
+</body>
+</html>
