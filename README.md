@@ -93,3 +93,14 @@ Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" targe
 &#xa0;
 
 <a href="#top">Back to top</a>
+
+
+## Suggested GitHub Topics
+
+~~~text
+html css javascript responsive-design frontend ecommerce storefront website landing-page
+~~~
+
+## License
+
+This project is available under the MIT License. See [LICENSE](LICENSE).
